@@ -3,11 +3,10 @@ name: Check Compiles
 # Trigger the workflow on push events to any branch and pull requests to any branch
 on:
   push:
-    branches-ignore:
-      - '**'
+    branches: ['**']
   pull_request:
-    branches-ignore:
-      - '**'
+    branches: ['**']
+
 
 env:
   CARGO_TERM_COLOR: always
