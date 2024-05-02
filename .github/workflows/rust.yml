@@ -1,0 +1,25 @@
+name: Check Compiles
+
+# Trigger the workflow on push events to any branch and pull requests to any branch
+on:
+  push:
+    branches-ignore:
+      - '**'
+  pull_request:
+    branches-ignore:
+      - '**'
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    # Set a timeout for the job to 5 minutes
+    timeout-minutes: 5
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: cargo build --verbose
