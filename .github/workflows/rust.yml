@@ -20,5 +20,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose
+    - name: Change directory and Build
+      run: |
+        cd game/
+        cargo build --verbose
